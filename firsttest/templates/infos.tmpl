@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-nr-min.css" />
+  </head>
+
+  <body style="margin: 20px;">
+    <h1>So, hier einmal ein paar Infos zum Testen!</h1>
+    <pre> Also ich hab nu einmal so ne dummy-api erstellt. Ist in golang und arbeitet
+    mit Mongodb (nur weil ich die noch nie hatte). Der Teil ist aber unwichtig. Wichtig 
+    ist wie ich das mit der Api im Kopf habe, und das wäre wie folgt:
+    Um Daten zu bekommen rufe man eine Webaddresse auf. Z.B. die folgende:
+    http://{derWebnameUnserersServers}:3000/api/getAllmsg/html
+    
+    Die hab ich nu schon testweise angelegt. Ruft man den Link so auf, wird eine
+    HTML-Seite ausgeben. Das hab ich zum Nachvollziehen/Testen erstellt. Der wirklich
+    interessante Teil ist aber wenn man aus /html ein /json macht 
+    
+    http://{derWebnameUnserersServers}:3000/api/getAllmsg/json
+    
+    Dann gibt er nur die DAten in einem Standard-Format zurück (json is ne andere
+    art von xml oder sowas), mit denen deine App dann arbeiten könnte. 
+    
+    Gleiches prinzip um daten hinzuzufügen (da aber ohne ausgabeformat wie /json): 
+    
+    http://localhost:3000/api/addmsg/sascha/bla bla bla
+    
+    Würd für den Benutzer sascha die MEssage "bla bla bla" speichern. 
+    
+    Das ist alles nur sehr grob umrissen, müssen wa nochmal genauer beschnacken. 
+    Aber du könntest darüber schonmal testdaten anlegen + abrufen (also deine App muss 
+    dann einen HTTP-Request an die URL mit den jeweiligen Daten abschicken und die
+    antwort auslesen).
+    
+    Außerdem noch zum rumspielen folgende Api-Routen: 
+    
+    http://localhost:3000/htmlmsg
+    -> Webseite um alle Daten zu sehen + Formular um was hinzuzufügen.
+    
+    http://localhost:3000/api/getUsermsg/sascha/html
+    http://localhost:3000/api/getUsermsg/sascha/json
+    -> Ruft die Daten für benutzer sascha ab. /html zeigt ne Webseite, /json nur die Daten.
+    
+    
+    
+    
+  </body>
+</html>
